@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: hystrix
+server:
+  port: 3001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
+ribbon:
+  MaxAutoRetriesNextServer: 2
+  MaxAutoRetries: 1
+  OkToRetryOnAllOperations: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream #可以用*来暴露所有监控断点,或者用逗号隔开暴露多个断点
