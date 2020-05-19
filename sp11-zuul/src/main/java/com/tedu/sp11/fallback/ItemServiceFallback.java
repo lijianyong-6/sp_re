@@ -1,4 +1,4 @@
-package cn.tedu.sp11.fallback;
+package com.tedu.sp11.fallback;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
