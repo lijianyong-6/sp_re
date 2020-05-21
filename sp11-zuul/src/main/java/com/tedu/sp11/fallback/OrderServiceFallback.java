@@ -1,5 +1,5 @@
 package com.tedu.sp11.fallback;
-ackage cn.tedu.sp11.fallback;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
