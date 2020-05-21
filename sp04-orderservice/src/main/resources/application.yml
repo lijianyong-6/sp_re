@@ -1,6 +1,12 @@
-spring:
-  application:
-    name: order-service
+spring: 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: order-service
+      profile: dev
+
     
 server:
   port: 8201
