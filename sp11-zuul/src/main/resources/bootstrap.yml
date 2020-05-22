@@ -1,6 +1,12 @@
-spring:
-  application:
-    name: zuul
+spring: 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: zuul
+      profile: dev
+
     
 server:
   port: 3001
@@ -9,12 +15,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
-#以下配置为默认配置,可以省略
-zuul:
-  routes:
-    item-service: /item-service/**
-    user-service: /user-service/**
-    order-service: /order-service/**
 zuul:
   retryable: true
 ribbon:
@@ -22,3 +22,8 @@ ribbon:
   ReadTimeout: 1000
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream 
